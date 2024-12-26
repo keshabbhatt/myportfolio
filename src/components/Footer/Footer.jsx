@@ -12,8 +12,8 @@ function Footer() {
                     <span>2024 All Rights Reserved</span>
                     <span>|</span>
                     <span>Developed By</span>
-                    <a href="https://www.linkedin.com/in/daniyalsohail169/" target="_blank" rel="noopener noreferrer">
-                        <span>Daniyal Sohail</span>
+                    <a href="https://www.linkedin.com/in/keshab-raj-bhatt-64b083253" target="_blank" rel="noopener noreferrer">
+                        <span>Kunaal Bhatt</span>
                     </a>
                 </div>
             </div>

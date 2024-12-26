@@ -1,138 +1,79 @@
-import React from 'react'
-import "./Portfolio.css"
-import { Swiper, SwiperSlide } from "swiper/react"
+import React from "react";
+import "./Portfolio.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
 import "swiper/css";
-import { Autoplay } from 'swiper/modules';
-import MDS from "../../img/mds.webp"
-import Attendance from "../../img/Attendance.webp"
-import Education from "../../img/education.webp"
-import Port from "../../img/port.webp"
-import Netflix from "../../img/netflix.webp"
-import Sports from "../../img/sports.webp"
-import BA56 from "../../img/BA56.webp"
-import BA from "../../img/BA.webp"
-import MRF from "../../img/MRF.webp"
-import XShoe from "../../img/xshoe.webp"
-import useTheme from '../../context/Context';
+import "swiper/css/autoplay";
 
-
-
-const portFolioDate = [
+const Portfolio = () => {
+  const projects = [
     {
-        img: MDS,
-        title: "Ecommerce Store",
-        link: "https://mds-delights.netlify.app/"
+      name: "DIRGHAAYU",
+      image:
+        "https://res.cloudinary.com/dvyz4mpfn/image/upload/v1734534620/pro1_p17oac.png",
+      link: "https://example.com/dirghaayu",
     },
     {
-        img: Attendance,
-        title: "Attendance Dashboard",
-        link: "https://daniyal-dashboard.netlify.app/"
-    },
-
-    {
-        img: Education,
-        title: "IELTS Website",
-        link: "https://www.linkedin.com/posts/daniyalsohail169_webdevelopment-frontenddeveloper-reactjs-activity-7220541707119960064-VPvf?utm_source=combined_share_message&utm_medium=member_desktop"
+      name: "AI Lab Report Analyzer",
+      image:
+        "https://res.cloudinary.com/dvyz4mpfn/image/upload/v1734534730/pro3_okipgv.png",
+      link: "https://example.com/lab-report-analyzer",
     },
     {
-        img: Port,
-        title: "Portfolio Wbesite",
-        link: "https://www.linkedin.com/posts/daniyalsohail169_react-js-portfolio-website-activity-7221283345320583168-JglY?utm_source=combined_share_message&utm_medium=member_desktop"
+      name: "Royal Gym",
+      image:
+        "https://res.cloudinary.com/dvyz4mpfn/image/upload/v1734534793/pro2_ism3wu.png",
+      link: "https://example.com/royal-gym",
     },
     {
-        img: Netflix,
-        title: "Netflix UI",
-        link: "https://www.instagram.com/reel/C6EZUNpIPBK/?igsh=cGNhanRldGR1YzJ4"
+      name: "Banking System",
+      image:
+        "https://res.cloudinary.com/dvyz4mpfn/image/upload/v1734534911/port3_x98ojl.jpg",
+      link: "https://example.com/banking-system",
     },
-    {
-        img: Sports,
-        title: "Ecommerce Store",
-        link: "https://daniyalsports.netlify.app/"
-    },
-    {
-        img: BA56,
-        title: "UI Design",
-        link: "Figma Design"
-    },
-    {
-        img: BA,
-        title: "UI Design",
-        link: "Figma Design"
-    },
-    {
-        img: MRF,
-        title: "Product UI",
-        link: "Figma Design"
-    },
-    {
-        img: XShoe,
-        title: "UI Design",
-        link: "Figma Design"
-    },
-]
+  ];
 
+  return (
+    <div className="portfolio">
+      <h1>Portfolio</h1>
+      <div className="portfolioContainer">
+        <Swiper
+          modules={[Autoplay]}
+          spaceBetween={20}
+          slidesPerView={1}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+          breakpoints={{
+            640: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
+            1050: { slidesPerView: 3 },
+          }}
+        >
+          {projects.map((project, index) => (
+            <SwiperSlide key={index}>
+              <div className="portBox">
+                <div className="imgbox">
+                  <img src={project.image} alt={project.name} />
+                </div>
+                <div className="portCont">
+                  <span>{project.name}</span>
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <button>View Project</button>
+                  </a>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+    </div>
+  );
+};
 
-function Portfolio() {
-
-    const { themeMode } = useTheme()
-
-    return (
-        <div className="portfolio" >
-
-            <span style={{ color: themeMode === "dark" ? "#00FFFF" : "" }} data-aos="slide-right">Portfolio</span>
-
-
-            <div className="portfolioContainer">
-                <Swiper
-                    modules={[Autoplay]}
-                    spaceBetween={20}
-                    slidesPerView={1} // Initially show 1 slide per view
-                    autoplay={{
-                        delay: 2500,
-                        disableOnInteraction: false,
-                    }}
-                    breakpoints={{
-                        640: {
-                            slidesPerView: 1,
-                        },
-                        768: {
-                            slidesPerView: 1,
-                        },
-                        1050: {
-                            slidesPerView: 2,
-                        },
-                    }}
-                >
-                    {portFolioDate.map((item, index) => (
-                        <SwiperSlide key={index}>
-                            <div className="portBox">
-                                <div className="imgbox">
-                                    <img src={item.img} alt="" />
-                                </div>
-                                <div className="portCont">
-                                    <span style={{ color: themeMode === "dark" ? "white" : "" }}> {item.title}</span>
-                                    {item.link !== " " ?
-                                        (
-                                            <a href={item.link} target="_blank" rel="noopener noreferrer">
-                                                <button>Visit</button>
-                                            </a>
-                                        ) : (
-                                            <button>Soon</button>
-                                        )
-                                    }
-
-
-                                </div>
-                            </div>
-
-
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
-            </div>
-
-        </div>
-    )
-}
-
-export default Portfolio
+export default Portfolio;
