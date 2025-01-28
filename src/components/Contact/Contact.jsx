@@ -13,7 +13,7 @@ const Contact = () => {
         const message = form.message.value;
 
         // Construct WhatsApp URL
-        const whatsappNumber = "9809435364";
+        const whatsappNumber = "+9779809435364";
         const whatsappMessage = `Hello, my name is ${name}. My email is ${email}. Message: ${message}`;
         const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
