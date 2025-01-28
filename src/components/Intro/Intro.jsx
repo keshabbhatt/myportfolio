@@ -29,9 +29,10 @@ function Intro() {
                     <span style={{ color: themeMode === "dark" ? "white" : "" }}>
                         Hy! I AM
                     </span>
-                    <span style={{ color: themeMode === "dark" ? "#00FFFF" : "" }}>
-                        Kunaal Bhatt
-                    </span>
+                    <span style={{ color: themeMode === "dark" ? "#00FF00" : "#006400" }}>
+                         Kunaal Bhatt
+                        </span>
+
                     <span style={{ color: themeMode === "dark" ? "white" : "" }}>
                         Passionate
                         <span
