@@ -1,103 +1,106 @@
 .portfolio {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 3rem 0;
-  }
-  
-  h1 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    color: var(--darkBlue);
-  }
-  
-  .portfolioContainer {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 0; /* Reduced top and bottom padding */
+}
+
+h1 {
+  font-size: 2.2rem; /* Adjusted font size for better responsiveness */
+  margin-bottom: 1.5rem;
+  color: var(--darkBlue);
+  text-align: center;
+}
+
+.portfolioContainer {
+  width: 90%; /* Adjusted width for better centering */
+  max-width: 1200px;
+}
+
+.portBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 280px;
+  height: 360px;
+  border: 2px solid var(--darkBlue);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+}
+
+.portBox:hover {
+  transform: translateY(-5px); /* Subtle hover effect */
+}
+
+.imgbox {
+  width: 100%;
+  height: 190px; /* Adjusted height for uniform scaling */
+  overflow: hidden;
+}
+
+.portBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.portCont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.portCont span {
+  font-size: 1.2rem; /* Adjusted font size */
+  font-weight: bold;
+  color: var(--darkBlue);
+}
+
+.portCont button {
+  background: linear-gradient(180deg, #00FFFF 26.71%, #000080 99.36%);
+  box-shadow: 1px 10px 15px rgba(0, 255, 255, 0.4);
+  border-radius: 34px;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  padding: 5px 20px;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+.portCont button:hover {
+  background: white;
+  color: var(--darkBlue);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1050px) {
   .portBox {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 300px;
-    height: 380px;
-    border: 2px solid var(--darkBlue);
-    border-radius: 8px;
-    overflow: hidden;
-    transition: transform 0.3s ease-in-out;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 260px;
+    height: 340px;
   }
-  
-  .portBox:hover {
-    transform: translateY(-10px);
+}
+
+@media screen and (max-width: 768px) {
+  .portBox {
+    width: 240px;
+    height: 320px;
   }
-  
-  .imgbox {
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
+}
+
+@media screen and (max-width: 640px) {
+  .portBox {
+    width: 200px;
+    height: 300px;
   }
-  
-  .portBox img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+
+  h1 {
+    font-size: 1.8rem;
   }
-  
-  .portCont {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-  }
-  
-  .portCont span {
-    font-size: 1.25rem;
-    font-weight: bold;
-    color: var(--darkBlue);
-  }
-  
-  .portCont button {
-    background: linear-gradient(180deg, #00FFFF 26.71%, #000080 99.36%);
-    box-shadow: 1px 10px 15px rgba(0, 255, 255, 0.4);
-    border-radius: 34px;
-    border: none;
-    color: white;
-    font-size: 1rem;
-    padding: 5px 20px;
-    margin-top: 10px;
-    transition: all 0.3s ease;
-  }
-  
-  .portCont button:hover {
-    background: white;
-    color: var(--darkBlue);
-    cursor: pointer;
-  }
-  
-  @media screen and (max-width: 1050px) {
-    .portfolioContainer {
-      flex-direction: column;
-    }
-  }
-  
-  @media screen and (max-width: 768px) {
-    .portBox {
-      width: 250px;
-      height: 350px;
-    }
-  }
-  
-  @media screen and (max-width: 640px) {
-    .portBox {
-      width: 220px;
-      height: 320px;
-    }
-  }
-  
+}

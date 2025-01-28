@@ -1,96 +1,177 @@
-.intro {
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(to right, #f8f9fa, #e9f4ff);
+    color: var(--black);
+  }
+  
+  :root {
+    --black: #000;
+    --darkBlue: #1a1aff;
+    --btnColor: #00c4ff;
+  }
+  
+  /* Navbar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: #fff;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .theme-toggle {
+    width: 20px;
+    height: 20px;
+    background: var(--darkBlue);
+    border-radius: 50%;
+  }
+  
+  .nav-links a {
+    margin: 0 1rem;
+    text-decoration: none;
+    color: var(--black);
+    font-weight: bold;
+  }
+  
+  .contact-btn {
+    background: var(--btnColor);
+    border: none;
+    padding: 0.5rem 1rem;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+  }
+  
+  /* Intro Section */
+  .intro {
     display: flex;
     height: 77vh;
     margin-top: 5rem;
-}
-
-.intro-left {
+  }
+  
+  .intro-left {
     display: flex;
     flex: 1;
     position: relative;
     flex-direction: column;
     gap: 2rem;
-}
-
-.intro-name {
+  }
+  
+  .intro-name {
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
-}
-
-.intro-name> :nth-child(1) {
+  }
+  
+  .intro-name> :nth-child(1) {
     color: var(--black);
     font-weight: bold;
     font-size: 3rem;
-}
-
-.intro-name> :nth-child(2) {
+  }
+  
+  .intro-name> :nth-child(2) {
     color: var(--darkBlue);
     font-weight: bold;
     font-size: 3rem;
-}
-
-.intro-name> :nth-child(3) {
+  }
+  
+  .intro-name> :nth-child(3) {
     color: var(--black);
     font-weight: bold;
     font-size: 1.5rem;
-}
-
-.intro-name> :nth-child(3)>span {
+  }
+  
+  .intro-name> :nth-child(3)>span {
     color: var(--darkBlue);
     font-weight: bold;
     font-size: 1.8rem;
     margin-left: 10px;
-}
-
-.i-btn {
-    width: 7rem;
-    height: 2rem;
-}
-
-.intro-icon {
-    /* margin-top: 1rem; */
+  }
+  
+  .i-btn {
+    width: 8rem;
+    height: 2.5rem;
+    background: var(--btnColor);
+    border: none;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .i-btn:hover {
+    background: #0079ff;
+  }
+  
+  .intro-icon {
     display: flex;
     gap: 1rem;
-}
-
-.intro-right {
+  }
+  
+  .intro-icon img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+  
+  /* Image Styling */
+  .intro-right {
     flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
-}
-
-.intro-right>* {
-    position: absolute;
+  }
+  
+  .intro-right img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 8px solid var(--darkBlue); /* Enhanced border */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4); /* Improved shadow */
+    position: relative;
     z-index: 1;
-}
-
-
-.intro-right> :nth-child(1) {
-    height: 600px;
-    width: 500px;
-    /* left: 28%; */
-    top: -25%;
-}
-
-
-
-
-/* blur */
-.blur1 {
-    background: rgb(238 210 255);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover animation */
+  }
+  
+  .intro-right img:hover {
+    transform: scale(1.05); /* Subtle zoom-in effect */
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.5); /* Stronger shadow on hover */
+  }
+  
+  /* Blur Effects */
+  .blur1 {
+    background: #edd0ff;
     position: absolute;
     width: 22rem;
     height: 14rem;
     top: -18%;
     left: 56%;
     border-radius: 50%;
-    background: #edd0ff;
-    filter: blur(212px);
-    z-index: -9;
     filter: blur(72px);
-}
-
-.blur2 {
+    z-index: -1;
+  }
+  
+  .blur2 {
     background: #C1F5FF;
     position: absolute;
     top: 17rem;
@@ -98,197 +179,83 @@
     height: 11rem;
     left: -9rem;
     border-radius: 50%;
-    background: #C1F5FF;
-    filter: blur(212px);
-    z-index: -9;
     filter: blur(72px);
-}
-
-@media screen and (max-width: 1000px) {
-    .intro-name> :nth-child(1) {
-        color: var(--black);
-        font-weight: bold;
-        font-size: 2.5rem;
-    }
-
+    z-index: -1;
+  }
+  
+  /* Responsive Styles */
+  @media screen and (max-width: 1000px) {
+    .intro-name> :nth-child(1),
     .intro-name> :nth-child(2) {
-        color: var(--darkBlue);
-        font-weight: bold;
-        font-size: 2.5rem;
+      font-size: 2.5rem;
     }
-
+  
     .intro-name> :nth-child(3) {
-        color: var(--black);
-        font-weight: bold;
-        font-size: 1.2rem;
+      font-size: 1.2rem;
     }
-
+  
     .intro-name> :nth-child(3)>span {
-        color: var(--darkBlue);
-        font-weight: bold;
-        font-size: 1.4rem;
+      font-size: 1.4rem;
     }
-
-    .intro-right> :nth-child(1) {
-        height: 500px;
-        width: 400px;
-        top: -25%;
-        left: 10%;
+  
+    .intro-right img {
+      width: 200px;
+      height: 200px;
     }
-}
-
-@media screen and (max-width: 895px) {
+  }
+  
+  @media screen and (max-width: 900px) {
     .intro {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-        margin-top: 3rem;
-        height: auto;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 3rem;
+      height: auto;
     }
-
-    .intro-right {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .intro-right> :nth-child(1) {
-        height: 500px;
-        width: 400px;
-        position: relative;
-        margin: 0;
-    }
-
+  
     .intro-left {
-        align-items: center;
-        width: 30rem;
-        padding: 0;
-        margin: 0;
+      align-items: center;
+      text-align: center;
     }
-
-
-
-    .intro-name> :nth-child(1) {
-        width: 100%;
-        font-size: 2.5rem;
-    }
-
+  }
+  
+  @media screen and (max-width: 480px) {
+    .intro-name> :nth-child(1),
     .intro-name> :nth-child(2) {
-        width: 100%;
-        font-size: 2.5rem;
+      font-size: 2.2rem;
     }
-
+  
     .intro-name> :nth-child(3) {
-        width: 100%;
-        font-size: 1.3rem;
+      font-size: 1.1rem;
     }
-
+  
     .intro-name> :nth-child(3)>span {
-        width: 100%;
-        font-size: 1.7rem;
+      font-size: 1.3rem;
     }
-}
-
-@media screen and (max-width: 480px) {
-
-
-    .intro-right> :nth-child(1) {
-        height: 400px;
-        width: 350px;
-        position: relative;
-        margin: 0;
+  
+    .intro-right img {
+      width: 180px;
+      height: 180px;
     }
-
-    .intro-left {
-        align-items: center;
-        width: 40rem;
-        padding: 0;
-        margin: 0;
+  }
+  
+  @media screen and (max-width: 355px) {
+    .intro-right img {
+      width: 120px;
+      height: 120px;
     }
-
-    .intro-name> :nth-child(1) {
-        width: 100%;
-        font-size: 2.2rem;
-    }
-
+  
+    .intro-name> :nth-child(1),
     .intro-name> :nth-child(2) {
-        width: 100%;
-        font-size: 2.2rem;
+      font-size: 1.8rem;
     }
-
+  
     .intro-name> :nth-child(3) {
-        width: 100%;
-        font-size: 1.1rem;
+      font-size: 1rem;
     }
-
+  
     .intro-name> :nth-child(3)>span {
-        width: 100%;
-        font-size: 1.5rem;
+      font-size: 1.2rem;
     }
-}
-
-@media screen and (max-width: 400px) {
-
-
-    .intro-right> :nth-child(1) {
-        height: 350px;
-        width: 300px;
-        position: relative;
-        margin: 0;
-    }
-
-
-
-    .intro-name> :nth-child(1) {
-        width: 100%;
-        font-size: 2rem;
-    }
-
-    .intro-name> :nth-child(2) {
-        width: 100%;
-        font-size: 2.1rem;
-    }
-
-    .intro-name> :nth-child(3) {
-        width: 100%;
-        font-size: 1rem;
-    }
-
-    .intro-name> :nth-child(3)>span {
-        width: 100%;
-        font-size: 1.3rem;
-    }
-}
-
-@media screen and (max-width: 355px) {
-
-
-    .intro-right> :nth-child(1) {
-        height: 300px;
-        width: 270px;
-        position: relative;
-        margin: 0;
-    }
-
-
-
-    .intro-name> :nth-child(1) {
-        width: 100%;
-        font-size: 1.8rem;
-    }
-
-    .intro-name> :nth-child(2) {
-        width: 100%;
-        font-size: 2rem;
-    }
-
-    .intro-name> :nth-child(3) {
-        width: 100%;
-        font-size: 1rem;
-    }
-
-    .intro-name> :nth-child(3)>span {
-        width: 100%;
-        font-size: 1.2rem;
-    }
-}
+  }
+  

@@ -39,8 +39,9 @@ const Portfolio = () => {
       <div className="portfolioContainer">
         <Swiper
           modules={[Autoplay]}
-          spaceBetween={20}
+          spaceBetween={10} // Reduced spacing between images
           slidesPerView={1}
+          loop={true} // Enable circular/swiping loop
           autoplay={{
             delay: 2500,
             disableOnInteraction: false,
