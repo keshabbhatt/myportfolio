@@ -36,7 +36,7 @@ function Services() {
 
                         image={coding}
                         heading={"Web Development"}
-                        detail={"Expert in web technologies to build fully functional and responsive websites."}
+                        detail={" Build fully functional and responsive websites."}
                     />
                 </div>
                 <div >
@@ -44,7 +44,7 @@ function Services() {
 
                         image={design}
                         heading={"Product Design"}
-                        detail={"Designing user-centered products with a focus on functionality and aesthetics."}
+                        detail={"Designing user-centered products."}
                     />
                 </div>
                 <div>
@@ -52,7 +52,7 @@ function Services() {
 
                         image={coding2}
                         heading={"Ecommerce Store"}
-                        detail={" Designing and developing custom e-commerce stores with focus on seamless functionality and engaging design."}
+                        detail={" Designing and developing custom e-commerce stores."}
                     />
                 </div>
                 <div
